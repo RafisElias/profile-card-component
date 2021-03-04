@@ -1,0 +1,74 @@
+body {
+  color: hsl(0, 0%, 59%);
+  font-family: url("https://fonts.google.com/specimen/Kumbh+Sans");
+  background-color: hsl(185, 75%, 39%);
+  background-position: bottom;
+  /* background-repeat: no-repeat; */
+  background-image: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+}
+
+.profile-card {
+  border-radius: 20px;
+  width: 500px;
+  background-color: white;
+  margin: auto auto;
+}
+
+.profile-background {
+  height: 150px;
+  border-radius: 20px 20px 0 0;
+  background-image: url("./images/bg-pattern-card.svg");
+}
+
+.profile-image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  top: -55px;
+}
+
+img {
+  border-radius: 60px;
+  border: 5px solid white;
+}
+
+.profile-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -30px;
+  padding-bottom: 25px;
+  /* background-color: red; */
+}
+
+.profile-user span {
+  color: hsl(0, 0%, 59%);
+}
+
+.profile-city, .profile-stats-name {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.profile-name, .profile-stats {
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+}
+.stats > div {
+  padding: 25px;
+  text-align: center;
+}
