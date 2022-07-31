@@ -1,0 +1,201 @@
+:root {
+  --cls-dark-cyan: hsl(185, 75%, 39%);
+  --cls-very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --cls-dark-grayish-blue: hsl(227, 10%, 46%);
+
+  --cls-dark-gray: hsl(0, 0%, 59%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-family: 'Kumbh Sans', sans-serif;
+  background-color: var(--cls-dark-cyan);
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  color: var(--cls-very-dark-desaturated-blue);
+  padding: 1.25rem;
+  background-image: url('./images/bg-pattern-top.svg'),
+    url('./images/bg-pattern-bottom.svg');
+  background-repeat: no-repeat;
+  /* background-position: right 60vw bottom 39vh, top 39vh left 58vw; */
+  animation: moveIn 1s ease-in-out forwards;
+}
+
+@keyframes moveIn {
+  0% {
+    background-position: center;
+  }
+
+  100% {
+    background-position: right 60vw bottom 39vh, top 39vh left 58vw;
+  }
+}
+
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+main {
+  width: min(95%, 28rem);
+  margin-inline: auto;
+  font-weight: 400;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  position: relative;
+  color: var(--cls-very-dark-desaturated-blue);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  padding: 4px;
+}
+
+hr {
+  border: none;
+  border-top: .5px solid #eaeaea;
+  margin-top: 1.5rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.background {
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.background img {
+  border-radius: 1.5rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.background img:hover {
+  transform: scale(1.25);
+}
+
+.profile-image {
+  width: 95px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 5px solid #FFFFFF;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-3.15rem);
+  transition: transform 0.5s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: translateX(-50%) translateY(-3.15rem) rotate(360deg);
+}
+
+.person-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.person-age,
+.person-city {
+  /* font-size: 14px; */
+  font-weight: 400;
+  color: var(--cls-dark-grayish-blue);
+}
+
+.informations {
+  flex-direction: column;
+  gap: .55rem;
+}
+
+.person {
+  gap: .55rem;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-content: center;
+  padding: 1.5rem;
+}
+
+.stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.stats-item p:first-of-type {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.stats-item p:not(:first-of-type) {
+  color: var(--cls-dark-grayish-blue);
+  letter-spacing: 1.35px;
+  font-size: 12px;
+  font-weight: 400;
+}
